@@ -1,0 +1,281 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --primary-red: #D7263D;
+  --primary-red-dark: #8B1E2E;
+  --text-dark: #1A1A1A;
+  --gray-light: #EEEEEE;
+  --gray-mid: #F6F6F6;
+  --white: #FFFFFF;
+
+  --radius-small: 12px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+
+  --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   RESET / GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--gray-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: var(--text-dark);
+  padding: 32px;
+  text-align: center;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #8B1E2E;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  background:
+    linear-gradient(
+      rgba(26,26,26,0.75),
+      rgba(215,38,61,0.85)
+    ),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 32px;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 20px;
+  max-width: 760px;
+  margin: 0 auto 16px;
+}
+
+.hero-intro {
+  font-size: 16px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.container {
+  max-width: 1200px;
+  margin: -60px auto 0;
+  padding: 64px 32px 80px;
+  background: var(--white);
+  border-radius: 24px 24px 0 0;
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   SECTION HEADERS (FIXED)
+========================= */
+section {
+  margin-bottom: 72px;
+}
+
+section h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-red-dark);
+  margin-bottom: 36px;
+}
+
+/* =========================
+   CAR GRID
+========================= */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* =========================
+   CAR CARD
+========================= */
+.car-card {
+  background: var(--white);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-8px); /* Slight lift */
+  box-shadow: 0 16px 32px #8B1E2E
+
+;
+}
+
+/* =========================
+   IMAGES
+========================= */
+.car-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.car-card > div,
+.car-card {
+  padding: 24px;
+}
+
+.car-model {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 12px;
+}
+
+.car-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.car-card p:last-of-type {
+  margin-top: 12px;
+  color: #555;
+}
+
+.car-card strong {
+  color: var(--text-dark);
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+.status-badge {
+  display: inline-block;
+  margin: 14px 0;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05); /* Slight enlarge */
+  opacity: 0.9; /* Slight fade */
+}
+.status-available {
+  background: #10B981;
+  color: #fff;
+}
+
+.status-limited {
+  background: #F59E0B;
+  color: #000;
+}
+
+.status-unavailable {
+  background: #EF4444;
+  color: #fff;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-secondary {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-small);
+  border: none;
+  background: var(--primary-red);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-red-dark);
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #1A1A1A; /* Charcoal */
+  color: #FFFFFF;
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 14px;
+}
+
+/* Optional highlight for brand name or links */
+footer span,
+footer a {
+  color: #D7263D;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Footer links hover */
+footer a:hover {
+  color: #8B1E2E;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 40px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+}

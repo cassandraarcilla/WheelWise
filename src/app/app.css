@@ -1,0 +1,130 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #EEEEEE;
+  min-height: 100vh;
+  color: #1A1A1A;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+nav {
+  background-color: #1A1A1A;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+  border-bottom: 4px solid #D7263D;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   NAVIGATION LINKS
+========================= */
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 14px 28px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  border-radius: 6px;
+  position: relative;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Underline Accent */
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #D7263D;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::before {
+  width: 70%;
+}
+
+/* Hover Effect */
+nav a:hover {
+  background-color: rgba(215, 38, 61, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Active Link */
+nav a.active {
+  background-color: #D7263D;
+  color: #FFFFFF;
+}
+
+nav a.active::before {
+  display: none;
+}
+
+/* Click Feedback */
+nav a:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   ROUTER OUTLET
+========================= */
+router-outlet {
+  display: block;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  nav {
+    padding: 16px 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 24px;
+    font-size: 15px;
+    max-width: 220px;
+  }
+
+  nav a::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 8px auto;
+  }
+}

@@ -1,0 +1,78 @@
+/* Reset default margins and font */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Center content vertically and horizontally */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Car image styling */
+.car-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+/* Main header */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragraph text */
+p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Home button */
+.home-button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #000; /* black */
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect: turn background red */
+.home-button:hover {
+  background-color: #ff0000; /* red */
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+  .car-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .home-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
