@@ -1,0 +1,177 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #F5F5F5;
+            padding: 40px 20px;
+            color: #1A1A1A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .employee-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .employee-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .emp-id {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-active {
+            background: #D4F4DD;
+            color: #1B7B3A;
+        }
+
+        .status-leave {
+            background: #FFF4E6;
+            color: #B87C00;
+        }
+
+        .employee-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            color: #1A1A1A;
+            font-weight: 400;
+        }
+
+        .availability-banner {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .banner-active {
+            background: #D4F4DD;
+            color: #1B7B3A;
+        }
+
+        .banner-unavailable {
+            background: #FFF4E6;
+            color: #B87C00;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .directory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+       
+        /* =========================
+         FOOTER
+   ========================= */
+footer {
+    background-color: #1A1A1A; /* Charcoal background */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 24px 20px; /* Top/Bottom 24px, Left/Right 20px */
+    font-size: 14px;
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    position: relative; /* Stays at bottom of content */
+    margin-top: 40px; /* Space above footer */
+}
+
+footer span,
+footer a {
+    color: #D7263D; /* Primary red highlight */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #8B1E2E; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* Optional: Ensure links inside footer don't inherit unwanted styles */
+footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
