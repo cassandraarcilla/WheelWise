@@ -1,0 +1,260 @@
+        /* =========================
+           ROOT VARIABLES
+        ========================= */
+        :root {
+            --primary-red: #FF2D3B;
+            --primary-red-dark: #D7263D;
+            --text-dark: #1A1A1A;
+            --text-secondary: #666666;
+            --gray-light: #EEEEEE;
+            --gray-mid: #F6F6F6;
+            --white: #FFFFFF;
+            --radius-small: 12px;
+            --radius-medium: 16px;
+            --radius-large: 24px;
+            --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
+            --shadow-deep: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        /* =========================
+           RESET / GLOBAL
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--gray-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* =========================
+           BOOKING CONTAINER
+        ========================= */
+        .booking-container {
+            background: var(--white);
+            border-radius: var(--radius-large);
+            box-shadow: var(--shadow-deep);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            font-size: 15px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        /* =========================
+           FORM
+        ========================= */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #E5E5E5;
+            border-radius: var(--radius-small);
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: var(--white);
+            color: var(--text-dark);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 4px rgba(255, 45, 59, 0.1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #999;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            line-height: 1.5;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+        .btn-submit, .btn-home {
+            width: 100%;
+            padding: 16px;
+            border-radius: var(--radius-small);
+            border: none;
+            background: var(--primary-red);
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 45, 59, 0.2);
+        }
+
+        .btn-submit:hover, .btn-home:hover {
+            background: var(--primary-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 45, 59, 0.3);
+        }
+
+        .btn-submit:active, .btn-home:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(255, 45, 59, 0.2);
+        }
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+        .success-message {
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .summary-header {
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            color: var(--white);
+            padding: 24px;
+            border-radius: var(--radius-medium);
+            text-align: center;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(255, 45, 59, 0.25);
+        }
+
+        .summary-header h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .summary-header p {
+            font-size: 15px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 18px;
+            background: var(--gray-mid);
+            border-radius: var(--radius-small);
+            margin-bottom: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .summary-item:hover {
+            background: #F0F0F0;
+        }
+
+        .summary-item label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .summary-item span {
+            color: var(--text-dark);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* =========================
+           CHECKMARK ICON
+        ========================= */
+        .checkmark {
+            font-size: 52px;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+        @media (max-width: 600px) {
+            .booking-container {
+                padding: 32px 24px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .summary-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .summary-item span {
+                text-align: left;
+            }
+        }
