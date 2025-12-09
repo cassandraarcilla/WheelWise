@@ -258,3 +258,37 @@
                 text-align: left;
             }
         }
+        /* =========================
+         FOOTER
+   ========================= */
+footer {
+    background-color: #1A1A1A; /* Charcoal background */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 24px 20px; /* Top/Bottom 24px, Left/Right 20px */
+    font-size: 14px;
+    width: 100%; /* Full width */
+    box-sizing: border-box;
+    position: relative; /* Stays at bottom of content */
+    margin-top: 40px; /* Space above footer */
+}
+
+footer span,
+footer a {
+    color: #D7263D; /* Primary red highlight */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #8B1E2E; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* Optional: Ensure links inside footer don't inherit unwanted styles */
+footer * {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+

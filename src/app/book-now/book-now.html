@@ -1,176 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Now</title>
-   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Now</title>
+<style>
+body { font-family: "Inter", sans-serif; background: #EEEEEE; margin:0; padding:20px; }
+.booking-container { max-width: 1000px; margin: auto; background: #fff; border-radius:16px; padding:30px; display:flex; gap:30px; flex-wrap:wrap; }
+form { flex:1; display:flex; flex-direction:column; gap:15px; }
+label { font-weight:600; margin-bottom:5px; }
+input, select, textarea { padding:10px; font-size:15px; border-radius:8px; border:1px solid #ccc; width:100%; }
+.btn-submit { padding:12px; background:#FF2D3B; color:#fff; border:none; cursor:pointer; border-radius:8px; font-weight:600; }
+.btn-submit:hover { background:#D7263D; }
+.form-row { display:flex; gap:10px; }
+.form-row > div { flex:1; }
+</style>
 </head>
 <body>
-    <div class="booking-container">
-        <h1>Book Now</h1>
-        <p class="subtitle">Fill in your details to complete your booking</p>
-        
-        <form id="bookingForm">
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
-            </div>
 
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
-            </div>
+<div class="booking-container">
 
-            <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
-            </div>
+<form id="bookingForm">
+    <div class="form-group">
+        <label for="car">Select Car *</label>
+        <select id="car" name="car" required>
+            <option value="">Select a car...</option>
+            <option value="Toyota Vios">Toyota Vios</option>
+            <option value="Toyota Corolla Altis">Toyota Corolla Altis</option>
+            <option value="Toyota Yaris">Toyota Yaris</option>
+            <option value="Toyota Avanza">Toyota Avanza</option>
+            <option value="Toyota Veloz">Toyota Veloz</option>
+            <option value="Ford EcoSport">Ford EcoSport</option>
+            <option value="Toyota Fortuner">Toyota Fortuner</option>
+            <option value="Ford Everest">Ford Everest</option>
+            <option value="Mitsubishi Montero Sport">Mitsubishi Montero Sport</option>
+            <option value="Toyota Hiace">Toyota Hiace</option>
+            <option value="Toyota Grandia">Toyota Grandia</option>
+            <option value="Nissan Urvan">Nissan Urvan</option>
+        </select>
+    </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="date">Date *</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+    </div>
 
-                <div class="form-group">
-                    <label for="time">Time *</label>
-                    <input type="time" id="time" name="time" required>
-                </div>
-            </div>
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+    </div>
 
-            <div class="form-group">
-                <label for="guests">Number of Guests *</label>
-                <select id="guests" name="guests" required>
-                    <option value="">Select...</option>
-                    <option value="1">1 Guest</option>
-                    <option value="2">2 Guests</option>
-                    <option value="3">3 Guests</option>
-                    <option value="4">4 Guests</option>
-                    <option value="5">5+ Guests</option>
-                </select>
-            </div>
+    <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+    </div>
 
-            <div class="form-group">
-                <label for="message">Special Requests</label>
-                <textarea id="message" name="message" placeholder="Any special requirements or requests..."></textarea>
-            </div>
-
-            <button type="submit" class="btn-submit">Confirm Booking</button>
-        </form>
-
-        <div id="successMessage" class="success-message">
-            <div class="summary-header">
-                <div class="checkmark">✓</div>
-                <h2>Booking Confirmed!</h2>
-                <p>Your reservation has been successfully received</p>
-            </div>
-
-            <div class="summary-item">
-                <label>Name:</label>
-                <span id="summaryName"></span>
-            </div>
-
-            <div class="summary-item">
-                <label>Email:</label>
-                <span id="summaryEmail"></span>
-            </div>
-
-            <div class="summary-item">
-                <label>Phone:</label>
-                <span id="summaryPhone"></span>
-            </div>
-
-            <div class="summary-item">
-                <label>Date:</label>
-                <span id="summaryDate"></span>
-            </div>
-
-            <div class="summary-item">
-                <label>Time:</label>
-                <span id="summaryTime"></span>
-            </div>
-
-            <div class="summary-item">
-                <label>Guests:</label>
-                <span id="summaryGuests"></span>
-            </div>
-
-            <div class="summary-item" id="summaryRequestContainer" style="display: none;">
-                <label>Special Requests:</label>
-                <span id="summaryMessage"></span>
-            </div>
-
-            <button class="btn-home" onclick="goHome()">Back to Home</button>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="date">Date *</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+            <label for="time">Time *</label>
+            <input type="time" id="time" name="time" required>
         </div>
     </div>
 
-    <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const guests = document.getElementById('guests').value;
-            const message = document.getElementById('message').value;
+    <div class="form-group">
+        <label for="guests">Number of Guests *</label>
+        <select id="guests" name="guests" required>
+            <option value="">Select...</option>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5+ Guests</option>
+        </select>
+    </div>
 
-            // Format date
-            const dateObj = new Date(date);
-            const formattedDate = dateObj.toLocaleDateString('en-US', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            });
+    <div class="form-group">
+        <label for="message">Special Requests</label>
+        <textarea id="message" name="message" placeholder="Any special requirements or requests..."></textarea>
+    </div>
 
-            // Format time
-            const timeObj = new Date('2000-01-01 ' + time);
-            const formattedTime = timeObj.toLocaleTimeString('en-US', { 
-                hour: 'numeric', 
-                minute: '2-digit',
-                hour12: true 
-            });
+    <button type="submit" class="btn-submit">Confirm Booking</button>
+</form>
 
-            // Update summary
-            document.getElementById('summaryName').textContent = name;
-            document.getElementById('summaryEmail').textContent = email;
-            document.getElementById('summaryPhone').textContent = phone;
-            document.getElementById('summaryDate').textContent = formattedDate;
-            document.getElementById('summaryTime').textContent = formattedTime;
-            document.getElementById('summaryGuests').textContent = guests + (guests === '1' ? ' Guest' : ' Guests');
-            
-            // Show special requests if provided
-            if (message.trim()) {
-                document.getElementById('summaryMessage').textContent = message;
-                document.getElementById('summaryRequestContainer').style.display = 'flex';
-            } else {
-                document.getElementById('summaryRequestContainer').style.display = 'none';
-            }
-            
-            // Show success message
-            document.getElementById('successMessage').classList.add('show');
-            
-            // Hide form
-            this.style.display = 'none';
-        });
+</div>
 
-        function goHome() {
-            // Reset form
-            document.getElementById('bookingForm').reset();
-            document.getElementById('bookingForm').style.display = 'block';
-            document.getElementById('successMessage').classList.remove('show');
-            
-            // In a real application, this would redirect to home page
-            // window.location.href = '/';
-        }
+<script>
+// Minimum date today
+document.getElementById('date').setAttribute('min', new Date().toISOString().split('T')[0]);
 
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').setAttribute('min', today);
-    </script>
+// Handle submit
+document.getElementById('bookingForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    alert('Booking Confirmed!');
+});
+</script>
+
 </body>
+<!-- Footer -->
+    <footer>
+        <p>&copy; 2024 WheelWise. Drive Smart. Choose Wise.</p>
+    </footer>
 </html>
